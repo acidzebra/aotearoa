@@ -2,8 +2,8 @@
 -- MAPGEN
 
 
-minetest.clear_registered_biomes()
-minetest.clear_registered_decorations()
+--minetest.clear_registered_biomes()
+--minetest.clear_registered_decorations()
 --minetest.clear_registered_ores()
 
 
@@ -22,7 +22,7 @@ dofile(aotearoa.path .. "/ores.lua")
 
 --ocean
 local ocean_min = -150
-local ocean_max = -21
+local ocean_max = -11
 
 --rocks
 --local basement_min = -10000
@@ -32,25 +32,25 @@ local ocean_max = -21
 ------------
 --beaches
 local beach_max = 2
-local beach_min = ocean_max + 1
+local beach_min = ocean_max -2
 --dunes
 local dune_max = 5
-local dune_min = beach_max + 1
+local dune_min = beach_max -2
 --coastal forest etc
 local coastf_max = 14
-local coastf_min = dune_max + 1
+local coastf_min = dune_max - 2
 --lowland forest etc
 local lowf_max = 80
-local lowf_min = coastf_max + 1
+local lowf_min = coastf_max -2
 --highland forest etc
-local highf_max = 120
-local highf_min = lowf_max + 1
+local highf_max = 130
+local highf_min = lowf_max -2
 --alpine
-local alp_max = 140
-local alp_min = highf_max + 1
+local alp_max = 170
+local alp_min = highf_max -2
 --high alpine
 local high_alp_max = 31000
-local high_alp_min = alp_max + 1
+local high_alp_min = alp_max - 2
 
 
 ------------
@@ -150,24 +150,24 @@ local alpine_peat_hum = 100
 ------------------------------------------------------------
 --BASEMENT ROCK
 
--- Underground
-	minetest.register_biome({
-		name = "underground",
-		--node_dust = "",
-		--node_top = "",
-		--depth_top = ,
-		--node_filler = "",
-		--depth_filler = ,
-		--node_stone = "",
-		--node_water_top = "",
-		--depth_water_top = ,
-		--node_water = "",
-		--node_river_water = "",
-		y_min = -31000,
-		y_max = -113,
-		heat_point = 50,
-		humidity_point = 50,
-	})
+-- -- Underground
+	-- minetest.register_biome({
+		-- name = "underground",
+		-- --node_dust = "",
+		-- --node_top = "",
+		-- --depth_top = ,
+		-- --node_filler = "",
+		-- --depth_filler = ,
+		-- --node_stone = "",
+		-- --node_water_top = "",
+		-- --depth_water_top = ,
+		-- --node_water = "",
+		-- --node_river_water = "",
+		-- y =  -31000,
+		-- y = -113,
+		-- heat_point = 50,
+		-- humidity_point = 50,
+	-- })
 
 
 
@@ -186,8 +186,8 @@ minetest.register_biome({
 	--depth_water_top = ,
 	--node_water = "",
 	--node_river_water = "",
-	y_min = basement_min,
-	y_max = basement_max,
+	y =  basement_min,
+	y = basement_max,
 	heat_point = 60,
 	humidity_point = 40,
 })
@@ -225,8 +225,11 @@ minetest.register_biome({
 	--depth_water_top = ,
 	--node_water = "",
 	--node_river_water = "default:river_water_source",
-	y_min = -150,
-	y_max = beach_min,
+	-- y =  -150,
+	-- y = beach_min,
+	min_pos = {x = -31000, y = -150, z = -20500},
+	max_pos = {x = 31000, y = beach_min, z = 20500},
+	vertical_blend = 6,
 	heat_point = 50,
 	humidity_point = 50,
 })
@@ -250,8 +253,11 @@ minetest.register_biome({
 	node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
 	depth_riverbed = 2,
-	y_min = beach_min,
-	y_max = beach_max,
+	-- y =  beach_min,
+	-- y = beach_max,
+	min_pos = {x = -31000, y = beach_min, z = -20500},
+	max_pos = {x = 31000, y = beach_max, z = 20500},
+	vertical_blend = 6,
 	heat_point = sandy_temp,
 	humidity_point = sandy_hum,
 })
@@ -274,8 +280,11 @@ minetest.register_biome({
 	node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
 	depth_riverbed = 1,
-	y_min = -5,
-	y_max = beach_max,
+	-- y =  -5,
+	-- y = beach_max,
+	min_pos = {x = -31000, y = -5, z = -20500},
+	max_pos = {x = 31000, y = beach_max, z = 20500},
+	vertical_blend = 6,
 	heat_point = shelly_temp,
 	humidity_point = shelly_hum,
 })
@@ -299,8 +308,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-  y_min = beach_min,
-	y_max = beach_max,
+  vertical_blend = 6,
+  -- y =  beach_min,
+	-- y = beach_max,
+	min_pos = {x = -31000, y = beach_min, z = -20500},
+	max_pos = {x = 31000, y = beach_max, z = 20500},
 	heat_point = gravel_temp,
 	humidity_point = gravel_hum,
 })
@@ -323,8 +335,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-  y_min = beach_min/2,
-	y_max = beach_max,
+  -- y =  beach_min/2,
+	-- y = beach_max,
+	min_pos = {x = -31000, y = beach_min/2, z = -20500},
+	max_pos = {x = 31000, y = beach_max, z = 20500},
+	vertical_blend = 6,
 	heat_point = subantartic_temp,
 	humidity_point = subantartic_hum,
 })
@@ -347,8 +362,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-  y_min = beach_min/2,
-	y_max = beach_max + 3,
+  -- y =  beach_min/2,
+	-- y = beach_max + 3,
+	min_pos = {x = -31000, y = beach_min/2, z = -20500},
+	max_pos = {x = 31000, y = beach_max + 3, z = 20500},
+	vertical_blend = 6,
 	heat_point = volcanic_isle_temp,
 	humidity_point = volcanic_isle_hum,
 })
@@ -372,8 +390,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
   depth_riverbed = 1,
-  y_min = beach_min,
-	y_max = beach_max,
+  -- y =  beach_min,
+	-- y = beach_max,
+	min_pos = {x = -31000, y = beach_min, z = -20500},
+	max_pos = {x = 31000, y = beach_max, z = 20500},
+	vertical_blend = 6,
   heat_point = iron_temp,
 	humidity_point = iron_hum,
 })
@@ -396,8 +417,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "aotearoa:silt",
   depth_riverbed = 1,
-  y_min = beach_min,
-	y_max = beach_max,
+  vertical_blend = 6,
+  -- y =  beach_min,
+	-- y = beach_max,
+	min_pos = {x = -31000, y = beach_min, z = -20500},
+	max_pos = {x = 31000, y = beach_max, z = 20500},
 	heat_point = estuary_temp,
 	humidity_point = estuary_hum,
 })
@@ -428,8 +452,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
   depth_riverbed = 2,
-	y_min = dune_min,
-	y_max = dune_max,
+  vertical_blend = 6,
+	-- min_pos = {x = -31000, y = dune_min, z = 20500},
+	-- max_pos = {x = 31000, y = dune_max, z = -20500},
+	min_pos = {x = -31000, y = dune_min, z = -20500},
+	max_pos = {x = 31000, y = dune_max, z = 20500},
 	heat_point = pohutukawa_temp,
 	humidity_point = pohutukawa_hum,
 })
@@ -454,8 +481,12 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
   depth_riverbed = 2,
-  y_min = dune_min,
-	y_max = dune_max,
+  vertical_blend = 6,
+  -- min_pos = {x = -31000, y = dune_min, z = 20500},
+	
+	min_pos = {x = -31000, y = dune_min, z = -20500},
+	max_pos = {x = 31000, y = dune_max, z = 20500},	
+	
   heat_point = sandy_temp,
 	humidity_point = sandy_hum,
 })
@@ -480,8 +511,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
   depth_riverbed = 2,
-  y_min = dune_min,
-	y_max = dune_max,
+  vertical_blend = 6,
+  min_pos = {x = -31000, y = dune_min, z = -20500},
+	max_pos = {x = 31000, y = dune_max, z = 20500},
 	heat_point = iron_temp,
 	humidity_point = iron_hum,
 })
@@ -505,8 +537,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-  y_min = dune_min,
-	y_max = dune_max,
+  vertical_blend = 6,
+  min_pos = {x = -31000, y = dune_min, z = -20500},
+	max_pos = {x = 31000, y = dune_max, z = 20500},
   heat_point = gravel_temp,
 	humidity_point = gravel_hum,
 })
@@ -529,8 +562,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-  y_min = dune_min,
-	y_max = dune_max + 1,
+  vertical_blend = 6,
+  min_pos = {x = -31000, y = dune_min, z = -20500},
+	max_pos = {x = 31000, y = dune_max + 1, z = 20500},
   heat_point = subantartic_temp,
 	humidity_point = subantartic_hum,
 })
@@ -552,8 +586,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-  y_min = dune_min,
-	y_max = dune_max + 1,
+  vertical_blend = 6,
+  min_pos = {x = -31000, y = dune_min, z = -20500},
+	max_pos = {x = 31000, y = dune_max + 1, z = 20500},
   heat_point = volcanic_isle_temp,
 	humidity_point = volcanic_isle_hum,
 })
@@ -581,8 +616,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
   depth_riverbed = 1,
-	y_min = coastf_min,
-	y_max = coastf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = coastf_min, z = -20500},
+	max_pos = {x = 31000, y = coastf_max, z = 20500},
 	heat_point = pohutukawa_temp,
 	humidity_point = pohutukawa_hum,
 })
@@ -608,8 +644,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = coastf_min,
-	y_max = coastf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = coastf_min, z = -20500},
+	max_pos = {x = 31000, y = coastf_max, z = 20500},
 	heat_point = c_scrub_temp,
 	humidity_point = c_scrub_hum,
 })
@@ -635,8 +672,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = coastf_min,
-	y_max = coastf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = coastf_min, z = -20500},
+	max_pos = {x = 31000, y = coastf_max, z = 20500},
 	heat_point = muttonbird_temp,
 	humidity_point = muttonbird_hum,
 })
@@ -659,8 +697,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = coastf_min,
-	y_max = coastf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = coastf_min, z = -20500},
+	max_pos = {x = 31000, y = coastf_max, z = 20500},
 	heat_point = tussock_temp,
 	humidity_point = tussock_hum,
 })
@@ -687,10 +726,13 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
   depth_riverbed = 1,
-	y_min = coastf_min + 2,
-	--for some mystery reason it wont spawn trees higher than this anyway!
-	y_max = 25,
-	--y_max = lowf_max/2,
+  vertical_blend = 6,
+	-- y =  coastf_min + 2,
+	-- --for some mystery reason it wont spawn trees higher than this anyway!
+	-- y = 25,
+	min_pos = {x = -31000, y = coastf_min + 2, z = -20500},
+	max_pos = {x = 31000, y = 25, z = 20500},
+	--y = lowf_max/2,
 	heat_point = kahi_swamp_temp,
 	humidity_point = kahi_swamp_hum,
 })
@@ -722,8 +764,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-	y_min = lowf_min,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = lowf_min, z = -20500},
+	max_pos = {x = 31000, y = lowf_max, z = 20500},
 	heat_point = pohutukawa_temp,
 	humidity_point = pohutukawa_hum,
 })
@@ -748,8 +791,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-	y_min = lowf_min,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = lowf_min, z = -20500},
+	max_pos = {x = 31000, y = lowf_max, z = 20500},
 	heat_point = npodo_temp,
 	humidity_point = npodo_hum,
 })
@@ -774,8 +818,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-	y_min = lowf_min,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = lowf_min, z = -20500},
+	max_pos = {x = 31000, y = lowf_max, z = 20500},
 	heat_point = spodo_temp,
 	humidity_point = spodo_hum,
 })
@@ -798,8 +843,10 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
-	y_min = lowf_max/2,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	-- y =  lowf_max/2,
+	min_pos = {x = -31000, y = lowf_max/2, z = -20500},
+	max_pos = {x = 31000, y = lowf_max, z = 20500},
 	heat_point = kamahi_temp,
 	humidity_point = kamahi_hum,
 })
@@ -822,8 +869,10 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "aotearoa:peat",
   depth_riverbed = 4,
-	y_min = lowf_min,
-	y_max = 40,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y = lowf_min, z = -20500},
+	max_pos = {x = 31000, y = 40, z = 20500},
+	y = 40,
 	heat_point = peat_temp,
 	humidity_point = peat_hum,
 })
@@ -848,8 +897,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:silt",
   depth_riverbed = 1,
-	y_min = lowf_min + 1,
-	y_max = lowf_min + 1,
+  vertical_blend = 6,
+	-- y =  lowf_min + 1,
+	-- y = lowf_min + 1,
+	min_pos = {x = -31000, y = lowf_min + 1, z = -20500},
+	max_pos = {x = 31000, y = lowf_min + 1, z = 20500},
 	heat_point = raupo_swamp_temp,
 	humidity_point = raupo_swamp_hum,
 })
@@ -881,8 +933,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = lowf_min,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y =  lowf_min, z = -20500},
+	max_pos = {x = 31000, y =  lowf_max, z = 20500},
 	heat_point = gumland_temp,
 	humidity_point = gumland_hum,
 })
@@ -908,8 +961,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = lowf_min,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y =  lowf_min, z = -20500},
+	max_pos = {x = 31000, y =  lowf_max, z = 20500},
 	heat_point = fernland_temp,
 	humidity_point = fernland_hum,
 })
@@ -932,8 +986,9 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = lowf_min,
-	y_max = lowf_max,
+  vertical_blend = 6,
+	min_pos = {x = -31000, y =  lowf_min, z = -20500},
+	max_pos = {x = 31000, y =  lowf_max, z = 20500},
 	heat_point = tussock_temp,
 	humidity_point = tussock_hum,
 })
@@ -950,100 +1005,100 @@ minetest.register_biome({
 --flora: tree daisy,
 --flora: grass
 
-minetest.register_biome({
-	name = "pahautea_forest",
-	node_dust = "default:snow",
-	node_top = "default:dirt_with_rainforest_litter",
-	depth_top = 1,
-	--node_filler = "default:clay",
-	--depth_filler = 1,
-	node_stone = "default:stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:gravel",
-  depth_riverbed = 1,
-	y_min = highf_min,
-	y_max = highf_max,
-	heat_point = pahautea_temp,
-	humidity_point = pahautea_hum,
-})
+-- minetest.register_biome({
+	-- name = "pahautea_forest",
+	-- node_dust = "default:snow",
+	-- node_top = "default:dirt_with_rainforest_litter",
+	-- depth_top = 1,
+	-- --node_filler = "default:clay",
+	-- --depth_filler = 1,
+	-- node_stone = "default:stone",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "default:gravel",
+  -- depth_riverbed = 1,
+	-- y =  highf_min,
+	-- y = highf_max,
+	-- heat_point = pahautea_temp,
+	-- humidity_point = pahautea_hum,
+-- })
 
 
---rangipo_desert
---more restricted altitude
---warm and dry
---flora: bristle tussock,
-minetest.register_biome({
-	name = "rangipo_desert",
-	--node_dust = "default:snow",
-	node_top = "aotearoa:volcanic_sand",
-	depth_top = 6,
-	node_filler = "default:clay",
-	depth_filler = 1,
-	node_stone = "default:obsidian",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "aotearoa:volcanic_sand",
-  depth_riverbed = 3,
-	y_min = highf_min + 10,
-	y_max = highf_max,
-	heat_point = rangipo_temp,
-	humidity_point = rangipo_hum,
-})
+-- --rangipo_desert
+-- --more restricted altitude
+-- --warm and dry
+-- --flora: bristle tussock,
+-- minetest.register_biome({
+	-- name = "rangipo_desert",
+	-- --node_dust = "default:snow",
+	-- node_top = "aotearoa:volcanic_sand",
+	-- depth_top = 6,
+	-- node_filler = "default:clay",
+	-- depth_filler = 1,
+	-- node_stone = "default:obsidian",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "aotearoa:volcanic_sand",
+  -- depth_riverbed = 3,
+	-- y =  highf_min + 10,
+	-- y = highf_max,
+	-- heat_point = rangipo_temp,
+	-- humidity_point = rangipo_hum,
+-- })
 
 
---mountain beech (alpine)
---cold and damp
---flora: kamahi, mt beech
---flora: hard fern? (blechnum?)?
-minetest.register_biome({
-	name = "mountain_beech_forest",
-	node_dust = "default:snow",
-	node_top = "aotearoa:dirt_with_moss",
-	depth_top = 1,
-	--node_filler = "default:clay",
-	--depth_filler = 1,
-	node_stone = "default:desert_stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:gravel",
-  depth_riverbed = 1,
-	y_min = highf_min,
-	y_max = highf_max,
-	heat_point = mt_beech_temp,
-	humidity_point = mt_beech_hum,
-})
+-- --mountain beech (alpine)
+-- --cold and damp
+-- --flora: kamahi, mt beech
+-- --flora: hard fern? (blechnum?)?
+-- minetest.register_biome({
+	-- name = "mountain_beech_forest",
+	-- node_dust = "default:snow",
+	-- node_top = "aotearoa:dirt_with_moss",
+	-- depth_top = 1,
+	-- --node_filler = "default:clay",
+	-- --depth_filler = 1,
+	-- node_stone = "default:desert_stone",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "default:gravel",
+  -- depth_riverbed = 1,
+	-- y =  highf_min,
+	-- y = highf_max,
+	-- heat_point = mt_beech_temp,
+	-- humidity_point = mt_beech_hum,
+-- })
 
 
 
---Mountain tussock
---cold and dry
---flora: bristle tussock, red tussock, leatherwood,
-minetest.register_biome({
-	name = "mountain_tussock",
-	node_dust = "default:snow",
-	node_top = "default:dirt_with_dry_grass",
-	depth_top = 1,
-	--node_filler = "default:clay",
-	--depth_filler = 1,
-	node_stone = "default:desert_stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:gravel",
-  depth_riverbed = 1,
-	y_min = highf_min,
-	y_max = highf_max,
-	heat_point = mt_tussock_temp,
-	humidity_point = mt_tussock_hum,
-})
+-- --Mountain tussock
+-- --cold and dry
+-- --flora: bristle tussock, red tussock, leatherwood,
+-- minetest.register_biome({
+	-- name = "mountain_tussock",
+	-- node_dust = "default:snow",
+	-- node_top = "default:dirt_with_dry_grass",
+	-- depth_top = 1,
+	-- --node_filler = "default:clay",
+	-- --depth_filler = 1,
+	-- node_stone = "default:desert_stone",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "default:gravel",
+  -- depth_riverbed = 1,
+	-- y =  highf_min,
+	-- y = highf_max,
+	-- heat_point = mt_tussock_temp,
+	-- humidity_point = mt_tussock_hum,
+-- })
 
 
 --peat bog
@@ -1063,8 +1118,10 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "aotearoa:peat",
   depth_riverbed = 3,
-	y_min = highf_min,
-	y_max = highf_max,
+	-- y =  highf_min,
+	-- y = highf_max,
+	min_pos = {x = -31000, y =  highf_min, z = -20500},
+	max_pos = {x = 31000, y = highf_max, z = 20500},
 	heat_point = alpine_peat_temp,
 	humidity_point = alpine_peat_hum,
 })
@@ -1087,8 +1144,11 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-	y_min = highf_min,
-	y_max = alp_max,
+  vertical_blend = 6,
+	-- y =  highf_min,
+	-- y = alp_max,
+	min_pos = {x = -31000, y =  highf_min, z = -20500},
+	max_pos = {x = 31000, y = alp_max, z = 20500},
 	heat_point = scree_temp,
 	humidity_point = scree_hum,
 })
@@ -1100,106 +1160,106 @@ minetest.register_biome({
 
 
 
---fellfield
---more stable rock debris
---mid range.
---Flora: SI edielwies Leucogenes grandiceps, snow totara
---Flora: vegetable sheep (Haastia pulvinaris), bristle_tussock
-minetest.register_biome({
-	name = "fellfield",
-	node_dust = "default:snow",
-	--node_top = "",
-	--depth_top = 1,
-	node_filler = "aotearoa:schist",
-	depth_filler = 5,
-	node_stone = "default:stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:gravel",
-  depth_riverbed = 1,
-	y_min = alp_min,
-	y_max = alp_max,
-	heat_point = 50,
-	humidity_point = 50,
-})
+-- --fellfield
+-- --more stable rock debris
+-- --mid range.
+-- --Flora: SI edielwies Leucogenes grandiceps, snow totara
+-- --Flora: vegetable sheep (Haastia pulvinaris), bristle_tussock
+-- minetest.register_biome({
+	-- name = "fellfield",
+	-- node_dust = "default:snow",
+	-- --node_top = "",
+	-- --depth_top = 1,
+	-- node_filler = "aotearoa:schist",
+	-- depth_filler = 5,
+	-- node_stone = "default:stone",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "default:gravel",
+  -- depth_riverbed = 1,
+	-- y =  alp_min,
+	-- y = alp_max,
+	-- heat_point = 50,
+	-- humidity_point = 50,
+-- })
 
 
 
 
 
-----------------
---HIGH ALPINE.
--- permanent snow and ice
+-- ----------------
+-- --HIGH ALPINE.
+-- -- permanent snow and ice
 
---snow (..and ice...)
-minetest.register_biome({
-	name = "alpine_snow",
-	node_dust = "default:snow",
-	node_top = "default:snowblock",
-	depth_top = 5,
-	node_filler = "default:ice",
-	depth_filler = 1,
-	node_stone = "default:stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:gravel",
-  depth_riverbed = 1,
-	y_min = high_alp_min,
-	y_max = high_alp_max,
-	heat_point = 50,
-	humidity_point = 50,
-})
+-- --snow (..and ice...)
+-- minetest.register_biome({
+	-- name = "alpine_snow",
+	-- node_dust = "default:snow",
+	-- node_top = "default:snowblock",
+	-- depth_top = 5,
+	-- node_filler = "default:ice",
+	-- depth_filler = 1,
+	-- node_stone = "default:stone",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "default:gravel",
+  -- depth_riverbed = 1,
+	-- y =  high_alp_min,
+	-- y = high_alp_max,
+	-- heat_point = 50,
+	-- humidity_point = 50,
+-- })
 
---glacier
---(altitude - extend down, )
---cold and wet
-minetest.register_biome({
-	name = "glacier",
-	node_dust = "default:snow",
-	node_top = "default:ice",
-	depth_top = 20,
-	node_filler = "default:ice",
-	depth_filler = 20,
-	node_stone = "default:stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:ice",
-  depth_riverbed = 1,
-	y_min = alp_min + 4,
-	y_max = high_alp_max,
-	heat_point = 0,
-	humidity_point = 100,
-})
+-- --glacier
+-- --(altitude - extend down, )
+-- --cold and wet
+-- minetest.register_biome({
+	-- name = "glacier",
+	-- node_dust = "default:snow",
+	-- node_top = "default:ice",
+	-- depth_top = 20,
+	-- node_filler = "default:ice",
+	-- depth_filler = 20,
+	-- node_stone = "default:stone",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "default:ice",
+  -- depth_riverbed = 1,
+	-- y =  alp_min + 4,
+	-- y = high_alp_max,
+	-- heat_point = 0,
+	-- humidity_point = 100,
+-- })
 
 
---volcano
---(altitude - extend down to meet rangipo, )
---hot and dry
-minetest.register_biome({
-	name = "volcano",
-	node_dust = "default:snow",
-	node_top = "aotearoa:volcanic_sand",
-	depth_top = 20,
-	--node_filler = "default:clay",
-	--depth_filler = 1,
-	node_stone = "default:obsidian",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "aotearoa:volcanic_sand",
-  depth_riverbed = 3,
-	y_min = alp_min,
-	y_max = high_alp_max,
-	heat_point = 100,
-	humidity_point = 0,
-})
+-- --volcano
+-- --(altitude - extend down to meet rangipo, )
+-- --hot and dry
+-- minetest.register_biome({
+	-- name = "volcano",
+	-- node_dust = "default:snow",
+	-- node_top = "aotearoa:volcanic_sand",
+	-- depth_top = 20,
+	-- --node_filler = "default:clay",
+	-- --depth_filler = 1,
+	-- node_stone = "default:obsidian",
+	-- --node_water_top = "",
+	-- --depth_water_top = ,
+	-- --node_water = "",
+  -- node_river_water = "default:river_water_source",
+  -- node_riverbed = "aotearoa:volcanic_sand",
+  -- depth_riverbed = 3,
+	-- y =  alp_min,
+	-- y = high_alp_max,
+	-- heat_point = 100,
+	-- humidity_point = 0,
+-- })
 
 
 

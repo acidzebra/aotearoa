@@ -20,8 +20,6 @@ if minetest.get_modpath("ambience") then
 end
 
 
-
-minetest.log("MOD: Aotearoa loaded")
-
+print ("[MOD]: Aotearoa loaded")
 
 ----------------------

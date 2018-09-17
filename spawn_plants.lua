@@ -380,14 +380,14 @@ minetest.register_decoration({
 							"default:dirt_with_dry_grass",
 						},
 	sidelen = 16,
-	fill_ratio = 0.9,
+	fill_ratio = 0.04,
 	biomes = {
 		"coastal_tussock",
 		"matagouri_scrub",
 		"mountain_tussock",
 	},
 	y_min = 5,
-	y_max = 1000,
+	y_max = 185,
 	decoration = "aotearoa:red_tussock",
 })
 

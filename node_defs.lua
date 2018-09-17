@@ -11,20 +11,20 @@
 
 
 aotearoa.treelist = {
-	{"mangrove", "Mangrove (Avicennia marina)", 2,},
-	{"pohutukawa", "Pohutukawa (Metrosideros excelsa)", 3, "flower"},
-	{"kauri", "Kauri (Agathis australis)", 2},
-	{"karaka", "Karaka (Corynocarpus laevigatus)", 3, nil,"karaka_fruit", "Karaka Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, -5},
-	{"rimu", "Rimu (Dacrydium cupressinum)", 3},
-	{"totara", "Totara (Podocarpus totara)", 2},
-	{"miro", "Miro (Prumnopitys ferruginea)", 2,nil, "miro_fruit", "Miro Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, 1},
-	{"kahikatea", "Kahikatea (dacrycarpus dacrydioides)", 2},
-  {"tawa", "Tawa (Beilschmiedia tawa)", 3,nil, "tawa_fruit", "Tawa Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, 1},
-  {"black_beech", "Black Beech (Fuscospora solandri)", 2},
-	{"kamahi", "Kamahi (Weinmannia racemosa)", 2, "flower"},
-	{"mountain_beech", "Mountain Beech (Fuscospora cliffortioides)",2},
-	{"pahautea", "Pahautea (Libocedrus bidwillii)",2},
-	{"kowhai", "Kowhai (Sophora microphylla)", 3, "flower",},
+	{"mangrove", "Mangrove", 2,},
+	{"pohutukawa", "Pohutukawa", 3, "flower"},
+	{"kauri", "Kauri", 2},
+	{"karaka", "Karaka", 3, nil,"karaka_fruit", "Karaka Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, -5},
+	{"rimu", "Rimu", 3},
+	{"totara", "Totara", 2},
+	{"miro", "Miro", 2,nil, "miro_fruit", "Miro Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, 1},
+	{"kahikatea", "Kahikatea", 2},
+    {"tawa", "Tawa", 3,nil, "tawa_fruit", "Tawa Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, 1},
+    {"black_beech", "Black Beech", 2},
+	{"kamahi", "Kamahi", 2, "flower"},
+	{"mountain_beech", "Mountain Beech",2},
+	{"pahautea", "Pahautea",2},
+	{"kowhai", "Kowhai", 3, "flower",},
 
 
 }
@@ -214,13 +214,13 @@ end
 
 
 aotearoa.shrublist = {
-	{"karo", "Karo (Pittosporum crassifolium)", 2},
-	{"kawakawa", "Kawakawa (Piper excelsum)", 2,nil, "kawakawa_fruit", "Kawakawa Fruit",{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8, 1},
-	{"manuka", "Manuka (Leptospermum scoparium)", 2, "flower",},
-	{"common_tree_daisy", "Common Tree Daisy (Olearia arborescens)", 2, "flower",},
-	{"matagouri", "Matagouri (Discaria toumatou)", 2},
-	{"mahoe", "Mahoe (Melicytus ramiflorus)", 2},
-	{"rangiora", "Rangiora (Brachyglottis repanda)", 2, "flower"},
+	{"karo", "Karo", 2},
+	{"kawakawa", "Kawakawa", 2,nil, "kawakawa_fruit", "Kawakawa Fruit",{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8, 1},
+	{"manuka", "Manuka", 2, "flower",},
+	{"common_tree_daisy", "Tree Daisy", 2, "flower",},
+	{"matagouri", "Matagouri", 2},
+	{"mahoe", "Mahoe", 2},
+	{"rangiora", "Rangiora", 2, "flower"},
 
 
 
@@ -389,16 +389,16 @@ end
 --ground cover plants
 
 aotearoa.plantlist = {
-	{"pingao", "Pingao (Ficinia spiralis)",nil,1, "dry_grass"},
-	{"spinifex", "Spinifex (Spinifex sericeus)",nil,1, "dry_grass"},
-	{"wiwi", "Wiwi (Ficinia nodosa)",nil,1, "grass", "firelike"},
-	{"flax", "Flax (Phormium tenax)",nil,1.5, "flower",},
-	{"bracken", "Bracken (Pteridium esculentum)",nil,1, "dry_grass","firelike"},
-	{"red_tussock", "Red tussock (Chionochloa rubra)",nil,1, "dry_grass","firelike"},
-	{"kiokio", "kiokio (Parablechnum novae-zelandiae)", nil,1,nil,"firelike"},
-	{"bristle_tussock", "Bristle tussock (Rytidosperma setifolium)",nil,1, "dry_grass",},
-	{"kauri_grass", "Kauri grass (Astelia trinervia)",nil,1,nil,"firelike"},
-	{"raupo", "Raupo (Typha orientalis)",nil,1.5, "dry_grass","firelike"},
+	{"pingao", "Pingao",nil,1, "dry_grass"},
+	{"spinifex", "Spinifex",nil,1, "dry_grass"},
+	{"wiwi", "Wiwi",nil,1, "grass"},
+	{"flax", "Flax",nil,1.5, "flower",},
+	{"bracken", "Bracken",nil,1, "dry_grass"},
+	{"red_tussock", "Red tussock",nil,1, "dry_grass"},
+	{"kiokio", "kiokio", nil,1,nil,"grass"},
+	{"bristle_tussock", "Bristle tussock",nil,1, "dry_grass",},
+	{"kauri_grass", "Kauri grass",nil,1,nil,"grass"},
+	{"raupo", "Raupo",nil,1.5, "dry_grass"},
 
 }
 
@@ -501,11 +501,11 @@ end
 -- Plant on a pole!
 
 aotearoa.tfernlist = {
-	{"mamaku", "Mamaku (Cyathea medullaris)", 3.5, "fern",},
-	{"silver_fern", "Silver Fern (Cyathea dealbata)", 3, "fern"},
-	{"wheki", "Wheki (Dicksonia squarrosa)", 2.5, "fern",nil,"skirt"},
-	{"cabbage_tree", "Cabbage tree (Cordyline australis)", 1.8,},
-	{"nikau_palm", "Nikau Palm (Rhopalostylis sapida)", 3.5,"",nil,"skirt"},
+	{"mamaku", "Mamaku", 3.5, "fern",},
+	{"silver_fern", "Silver Fern", 3, "fern"},
+	{"wheki", "Wheki", 2.5, "fern",nil,"skirt"},
+	{"cabbage_tree", "Cabbage tree", 1.8,},
+	{"nikau_palm", "Nikau Palm", 3.5,"",nil,"skirt"},
 
 
 }
