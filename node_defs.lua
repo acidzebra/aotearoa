@@ -389,16 +389,16 @@ end
 --ground cover plants
 
 aotearoa.plantlist = {
-	{"pingao", "Pingao",nil,1, "dry_grass"},
-	{"spinifex", "Spinifex",nil,1, "dry_grass"},
-	{"wiwi", "Wiwi (Ficinia nodosa)",nil,1, "grass", "firelike"},
-	{"flax", "Flax",nil,1.5, "flower",},
-	{"bracken", "Bracken",nil,1, "dry_grass"},
+	{"pingao", "Pingao (Ficinia spiralis)",nil,1, "dry_grass"},
+	{"spinifex", "Spinifex (Spinifex sericeus)",nil,1, "dry_grass"},
 	{"red_tussock", "Red tussock",nil,1, "dry_grass"},
-	{"kiokio", "kiokio", nil,1,nil,"grass"},
-	{"bristle_tussock", "Bristle tussock",nil,1, "dry_grass",},
-	{"kauri_grass", "Kauri grass",nil,1,nil,"grass"},
-	{"raupo", "Raupo",nil,1.5, "dry_grass"},
+	{"kiokio", "kiokio", nil,1,nil,"firelike"},
+	{"wiwi", "Wiwi (Ficinia nodosa)",nil,1, "grass", "firelike"},
+	{"flax", "Flax (Phormium tenax)",nil,1.5, "flower",},
+	{"bracken", "Bracken (Pteridium esculentum)",nil,1, "dry_grass","firelike"},
+	{"bristle_tussock", "Bristle tussock",nil,1, "dry_grass",},	
+	{"kauri_grass", "Kauri grass",nil,1,nil,"firelike"},
+	{"raupo", "Raupo",nil,1.5, "dry_grass","firelike"},
 
 }
 
