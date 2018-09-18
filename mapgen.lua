@@ -40,13 +40,13 @@ local dune_min = beach_max -2
 local coastf_max = 14
 local coastf_min = dune_max - 2
 --lowland forest etc
-local lowf_max = 80
+local lowf_max = 100
 local lowf_min = coastf_max -2
 --highland forest etc
-local highf_max = 130
+local highf_max = 150
 local highf_min = lowf_max -2
 --alpine
-local alp_max = 170
+local alp_max = 190
 local alp_min = highf_max -2
 --high alpine
 local high_alp_max = 31000
@@ -406,7 +406,7 @@ minetest.register_biome({
 minetest.register_biome({
 	name = "northern_estuary",
 	--node_dust = "",
-	node_top = "aotearoa:mud_sinking",
+	node_top = "default:dirt_with_rainforest_litter",
 	depth_top = 1,
 	node_filler = "aotearoa:mud",
 	depth_filler = 10,
@@ -886,7 +886,7 @@ minetest.register_biome({
 minetest.register_biome({
 	name = "raupo_swamp",
 	--node_dust = "",
-	node_top = "aotearoa:mud_sinking",
+	node_top = "default:dirt_with_rainforest_litter",
 	depth_top = 1,
 	node_filler = "aotearoa:mud",
 	depth_filler = 10,
@@ -1137,18 +1137,19 @@ minetest.register_biome({
 	depth_top = 1,
 	node_filler = "aotearoa:silt",
 	depth_filler = 1,
-	node_stone = "aotearoa:schist",
+	--node_stone = "aotearoa:schist",
+	node_stone = "default:stone",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-  vertical_blend = 6,
+  vertical_blend = 3,
 	-- y =  highf_min,
 	-- y = alp_max,
-	min_pos = {x = -31000, y =  highf_min, z = -20500},
-	max_pos = {x = 31000, y = alp_max, z = 20500},
+	min_pos = {x = -31000, y =  highf_min + 5, z = -20500},
+	max_pos = {x = 31000, y = highf_min + 8, z = 20500},
 	heat_point = scree_temp,
 	humidity_point = scree_hum,
 })
@@ -1160,30 +1161,35 @@ minetest.register_biome({
 
 
 
--- --fellfield
--- --more stable rock debris
--- --mid range.
--- --Flora: SI edielwies Leucogenes grandiceps, snow totara
--- --Flora: vegetable sheep (Haastia pulvinaris), bristle_tussock
--- minetest.register_biome({
-	-- name = "fellfield",
-	-- node_dust = "default:snow",
-	-- --node_top = "",
-	-- --depth_top = 1,
-	-- node_filler = "aotearoa:schist",
-	-- depth_filler = 5,
-	-- node_stone = "default:stone",
-	-- --node_water_top = "",
-	-- --depth_water_top = ,
-	-- --node_water = "",
-  -- node_river_water = "default:river_water_source",
-  -- node_riverbed = "default:gravel",
-  -- depth_riverbed = 1,
-	-- y =  alp_min,
-	-- y = alp_max,
-	-- heat_point = 50,
-	-- humidity_point = 50,
--- })
+--fellfield
+--more stable rock debris
+--mid range.
+--Flora: SI edielwies Leucogenes grandiceps, snow totara
+--Flora: vegetable sheep (Haastia pulvinaris), bristle_tussock
+minetest.register_biome({
+	name = "fellfield",
+	--node_dust = "default:snow",
+	--node_dust = "",
+	node_dust = "default:snow",
+	--node_top = "",
+	--depth_top = 1,
+	node_filler = "aotearoa:schist",
+	depth_filler = 3,
+	node_stone = "default:stone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:gravel",
+  depth_riverbed = 1,
+    vertical_blend = 3,
+	y =  alp_min,
+	y = alp_max,
+	min_pos = {x = -31000, y =  alp_min - 45, z = -20500},
+	max_pos = {x = 31000, y = alp_min - 30, z = 20500},
+	heat_point = 50,
+	humidity_point = 50,
+})
 
 
 

@@ -391,7 +391,7 @@ end
 aotearoa.plantlist = {
 	{"pingao", "Pingao",nil,1, "dry_grass"},
 	{"spinifex", "Spinifex",nil,1, "dry_grass"},
-	{"wiwi", "Wiwi",nil,1, "grass"},
+	{"wiwi", "Wiwi (Ficinia nodosa)",nil,1, "grass", "firelike"},
 	{"flax", "Flax",nil,1.5, "flower",},
 	{"bracken", "Bracken",nil,1, "dry_grass"},
 	{"red_tussock", "Red tussock",nil,1, "dry_grass"},
