@@ -37,13 +37,13 @@ local beach_min = ocean_max -2
 local dune_max = 5
 local dune_min = beach_max -2
 --coastal forest etc
-local coastf_max = 14
+local coastf_max = 34
 local coastf_min = dune_max - 2
 --lowland forest etc
-local lowf_max = 100
+local lowf_max = 80
 local lowf_min = coastf_max -2
 --highland forest etc
-local highf_max = 150
+local highf_max = 130
 local highf_min = lowf_max -2
 --alpine
 local alp_max = 190
@@ -1120,6 +1120,7 @@ minetest.register_biome({
   depth_riverbed = 3,
 	-- y =  highf_min,
 	-- y = highf_max,
+	vertical_blend = 3,
 	min_pos = {x = -31000, y =  highf_min, z = -20500},
 	max_pos = {x = 31000, y = highf_max, z = 20500},
 	heat_point = alpine_peat_temp,
@@ -1182,9 +1183,10 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
-    vertical_blend = 3,
+    vertical_blend = 5,
 	y =  alp_min,
 	y = alp_max,
+	vertical_blend = 4,
 	min_pos = {x = -31000, y =  alp_min - 45, z = -20500},
 	max_pos = {x = 31000, y = alp_min - 30, z = 20500},
 	heat_point = 50,
