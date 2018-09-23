@@ -327,7 +327,7 @@ minetest.register_node("aotearoa:seashells", {
 --note: hardness. default stone = 3, obsidian = 1
 
 aotearoa.stonelist = {
-	{"pounamu", "Pounamu", 1, 1,},
+	{"pounamu", "Pounamu", 2, 2,},
 	{"siltstone", "Siltstone", 3, 2, "sediment", "aotearoa:silt",},
 	{"claystone", "Claystone", 3, 2, "sediment", "default:clay",},
 	{"conglomerate", "Conglomerate", 3, 2, "sediment", "default:gravel",},

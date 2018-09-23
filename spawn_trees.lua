@@ -3,14 +3,18 @@
 
 --Density
 --podocarps
-local podo_scale = 0.0015
-local podo_persist = 0.35
+-- local podo_scale = 0.0015
+-- local podo_persist = 0.35
+-- local kauri_fill = 0.001
+local podo_scale = 0.0008
+local podo_persist = 0.25
 local kauri_fill = 0.001
 --braodleaves
-local broadl_fill = 0.0038
+-- local broadl_fill = 0.0038
+local broadl_fill = 0.0017
 --kahikatea swamp
-local kahi_swamp_fill = 0.01
-
+-- local kahi_swamp_fill = 0.01
+local kahi_swamp_fill = 0.005
 --treeferns
 local tfern_fill = 0.00025
 
@@ -18,11 +22,12 @@ local tfern_fill = 0.00025
 local shrub_fill = 0.0042
 
 --montane forest.
-local mt_forest_fill = 0.014
+-- local mt_forest_fill = 0.014
+local mt_forest_fill = 0.007
 
 --stumps
-local stump_fill = 0.003
-
+-- local stump_fill = 0.003
+local stump_fill = 0.001
 ------------------------------------
 --Mud pool
 minetest.register_decoration({
@@ -103,7 +108,7 @@ minetest.register_decoration({
 			"kamahi_forest",
 		},
 		y_min = 5,
-		y_max = 156,
+		y_max = 146,
 		schematic = aotearoa.path .. "/schematics/kahikatea1.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -131,7 +136,7 @@ minetest.register_decoration({
 			"southern_podocarp_forest",
 		},
 		y_min = 3,
-		y_max = 153,
+		y_max = 143,
 		schematic = aotearoa.path .. "/schematics/kahikatea2.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -193,7 +198,7 @@ minetest.register_decoration({
 		fill_ratio = kauri_fill,
 		biomes = {"kauri_forest"},
 		y_min = 15,
-		y_max = 152,
+		y_max = 145,
 		schematic = aotearoa.path .. "/schematics/kauri1.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -210,7 +215,7 @@ minetest.register_decoration({
 		fill_ratio = kauri_fill,
 		biomes = {"kauri_forest"},
 		y_min = 13,
-		y_max = 158,
+		y_max = 149,
 		schematic = aotearoa.path .. "/schematics/kauri2.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -303,7 +308,7 @@ minetest.register_decoration({
 			"kamahi_forest",
 		},
 		y_min = 19,
-		y_max = 154,
+		y_max = 148,
 		schematic = aotearoa.path .. "/schematics/totara1.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -331,7 +336,7 @@ minetest.register_decoration({
 			"southern_podocarp_forest",
 		},
 		y_min = 14,
-		y_max = 153,
+		y_max = 151,
 		schematic = aotearoa.path .. "/schematics/totara2.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -362,7 +367,7 @@ minetest.register_decoration({
 			"kamahi_forest",
 		},
 		y_min = 17,
-		y_max = 156,
+		y_max = 154,
 		schematic = aotearoa.path .. "/schematics/miro1.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -390,7 +395,7 @@ minetest.register_decoration({
 			"southern_podocarp_forest",
 		},
 		y_min = 15,
-		y_max = 157,
+		y_max = 153,
 		schematic = aotearoa.path .. "/schematics/miro2.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -416,7 +421,7 @@ minetest.register_decoration({
 			"northern_podocarp_forest",
 		},
 		y_min = 14,
-		y_max = 158,
+		y_max = 154,
 		schematic = aotearoa.path .. "/schematics/tawa1.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",

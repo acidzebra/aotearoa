@@ -118,6 +118,7 @@ for i in ipairs(aotearoa.treelist) do
 			paramtype = "light",
 			is_ground_content = false,
 			groups = g,
+			walkable = false,
 			sounds = default.node_sound_leaves_defaults(),
 
 			drop = {
@@ -520,7 +521,7 @@ for i in ipairs(aotearoa.tfernlist) do
 
 
 	-- player will get a sapling with 1/100 chance
-	local droprarity = 100
+	local droprarity = 20
 
 	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
 	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
