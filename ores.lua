@@ -7,30 +7,30 @@
 
 
 -- Obsidian
--- minetest.register_ore({
-	-- ore_type        = "blob",
-	-- ore             = "default:obsidian",
-	-- wherein         = {
-		-- "default:stone",
-	 	-- "default:desert_stone",
-		-- "default:desert_sandstone",
-		-- "default:sandstone",
-		-- "default:silver_sandstone",
-	 -- },
-	-- clust_scarcity  = 16 * 16 * 16,
-	-- clust_size      = 10,
-	-- y_min           = -31000,
-	-- y_max           = 31000,
-	-- noise_threshold = 0.0,
-	-- noise_params    = {
-		-- offset = 0,
-		-- scale = 1,
-		-- spread = {x = 15, y = 15, z = 15},
-		-- seed = -316,
-		-- octaves = 1,
-		-- persist = 0.0
-	-- },
--- })
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "default:obsidian",
+	wherein         = {
+		"default:stone",
+	 	"default:desert_stone",
+		"default:desert_sandstone",
+		"default:sandstone",
+		"default:silver_sandstone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 10,
+	y_min           = -23000,
+	y_max           = -20000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0,
+		scale = 1,
+		spread = {x = 15, y = 15, z = 15},
+		seed = -316,
+		octaves = 1,
+		persist = 0.0
+	},
+})
 
 -- Desert stone into deep stone
 minetest.register_ore({
@@ -63,8 +63,8 @@ minetest.register_ore({
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 15,
-	y_min           = -31000,
-	y_max           = 31000,
+	y_min           = -5000,
+	y_max           = 100,
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0,
@@ -149,28 +149,28 @@ minetest.register_ore({
 -- })
 
 -- coquina into sandstone
-minetest.register_ore({
-	ore_type        = "blob",
-	ore             = "aotearoa:coquina_limestone",
-	wherein         = {
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
-	 },
-	clust_scarcity  = 16 * 16 * 16,
-	clust_size      = 25,
-	y_min           = -31000,
-	y_max           = 31000,
-	noise_threshold = 0.0,
-	noise_params    = {
-		offset = 0,
-		scale = 1,
-		spread = {x = 15, y = 15, z = 15},
-		seed = -1999,
-		octaves = 1,
-		persist = 0.0
-	},
-})
+-- minetest.register_ore({
+	-- ore_type        = "blob",
+	-- ore             = "aotearoa:coquina_limestone",
+	-- wherein         = {
+		-- "default:desert_sandstone",
+		-- "default:sandstone",
+		-- "default:silver_sandstone",
+	 -- },
+	-- clust_scarcity  = 16 * 16 * 16,
+	-- clust_size      = 25,
+	-- y_min           = -31000,
+	-- y_max           = 31000,
+	-- noise_threshold = 0.0,
+	-- noise_params    = {
+		-- offset = 0,
+		-- scale = 1,
+		-- spread = {x = 15, y = 15, z = 15},
+		-- seed = -1999,
+		-- octaves = 1,
+		-- persist = 0.0
+	-- },
+-- })
 
 
 -- -- conglomerate into sandstone
@@ -228,34 +228,34 @@ minetest.register_ore({
 
 -- -------------------
 -- -- West Coast Coal
--- minetest.register_ore({
-	-- ore_type        = "blob",
-	-- ore             = "default:coalblock",
-	-- wherein         = {
-		-- "default:desert_sandstone",
-		-- "default:sandstone",
-		-- "default:silver_sandstone",
-	 -- },
-	-- clust_scarcity  = 16 * 16 * 16,
-	-- clust_size      = 5,
-	-- y_min           = -31000,
-	-- y_max           = 31000,
-	-- noise_threshold = 0.0,
-	-- noise_params    = {
-		-- offset = 0.5,
-		-- scale = 0.02,
-		-- spread = {x = 5, y = 5, z = 5},
-		-- seed = 7886,
-		-- octaves = 1,
-		-- persist = 0.0
-	-- },
-	-- biomes = {
-		-- "southern_podocarp_forest",
-		-- "muttonbird_scrub",
-		-- "iron_sand_dunes",
-		-- "iron_sand_beach",
-	-- },
--- })
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "default:coalblock",
+	wherein         = {
+		"default:desert_sandstone",
+		"default:sandstone",
+		"default:silver_sandstone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -25000,
+	y_max           = -24000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = 0.02,
+		spread = {x = 5, y = 5, z = 5},
+		seed = 7886,
+		octaves = 1,
+		persist = 0.0
+	},
+	biomes = {
+		"southern_podocarp_forest",
+		"muttonbird_scrub",
+		"iron_sand_dunes",
+		"iron_sand_beach",
+	},
+})
 
 
 -- --------------------
@@ -271,8 +271,8 @@ minetest.register_ore({
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 4,
-	y_min           = -31000,
-	y_max           = 31000,
+	y_min           = -500,
+	y_max           = 80,
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0.5,
@@ -304,7 +304,7 @@ minetest.register_ore({
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 3,
 	y_min           = -31000,
-	y_max           = 31000,
+	y_max           = -5,
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0.5,

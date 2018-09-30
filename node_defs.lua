@@ -42,7 +42,7 @@ for i in ipairs(aotearoa.treelist) do
 	local foodvalue = aotearoa.treelist[i][9]
 
 	-- player will get a sapling with 1/100 chance
-	local droprarity = 100
+	local droprarity = 20
 
 
 		minetest.register_node("aotearoa:"..treename.."_tree", {
@@ -270,9 +270,11 @@ for i in ipairs(aotearoa.shrublist) do
 				type = "fixed",
 				fixed = trunkbox,
 			},
+			paramtype = "light",
 			paramtype2 = "facedir",
 			is_ground_content = false,
-			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2},
+			walkable = false,
+			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, flora = 1},
 			sounds = default.node_sound_wood_defaults(),
 		})
 
@@ -283,13 +285,13 @@ for i in ipairs(aotearoa.shrublist) do
 			inventory_image = {"aotearoa_"..treename.."_sapling.png"},
 			paramtype = "light",
 			paramtype2 = "waving",
-			walkable = false,
+			--walkable = false,
 			is_ground_content = true,
 			selection_box = {
 				type = "fixed",
 				fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
 			},
-			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
+			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1, flora = 1},
 			sounds = default.node_sound_defaults(),
 			on_timer = function(pos,elapsed)
 				aotearoa.grow_shrub_sapling(pos, treename)
@@ -326,6 +328,7 @@ for i in ipairs(aotearoa.shrublist) do
 			tiles ={"aotearoa_"..treename.."_leaves.png" },
 			paramtype = "light",
 			is_ground_content = false,
+			walkable = false,
 			groups = g,
 			sounds = default.node_sound_leaves_defaults(),
 			drop = {
@@ -390,13 +393,13 @@ end
 --ground cover plants
 
 aotearoa.plantlist = {
-	{"pingao", "Pingao (Ficinia spiralis)",nil,1, "dry_grass"},
-	{"spinifex", "Spinifex (Spinifex sericeus)",nil,1, "dry_grass"},
+	{"pingao", "Pingao",nil,1, "dry_grass"},
+	{"spinifex", "Spinifex",nil,1, "dry_grass"},
 	{"red_tussock", "Red tussock",nil,1, "dry_grass"},
 	{"kiokio", "kiokio", nil,1,nil,"firelike"},
-	{"wiwi", "Wiwi (Ficinia nodosa)",nil,1, "grass", "firelike"},
-	{"flax", "Flax (Phormium tenax)",nil,1.5, "flower",},
-	{"bracken", "Bracken (Pteridium esculentum)",nil,1, "dry_grass","firelike"},
+	{"wiwi", "Wiwi",nil,1, "grass", "firelike"},
+	{"flax", "Flax",nil,1.5, "flower",},
+	{"bracken", "Bracken",nil,1, "dry_grass","firelike"},
 	{"bristle_tussock", "Bristle tussock",nil,1, "dry_grass",},	
 	{"kauri_grass", "Kauri grass",nil,1,nil,"firelike"},
 	{"raupo", "Raupo",nil,1.5, "dry_grass","firelike"},
@@ -490,6 +493,7 @@ for i in ipairs(aotearoa.bushlist) do
 		tiles = {"aotearoa_"..plantname..".png"},
 		paramtype = "light",
 		is_ground_content = false,
+		walkable = false,
 		groups = {snappy = 3, flammable = 2, leaves = 1},
 		sounds = default.node_sound_leaves_defaults(),
 	})
@@ -576,6 +580,7 @@ for i in ipairs(aotearoa.tfernlist) do
 			type = "fixed",
 			fixed = trunkbox,
 		},
+		paramtype = "light",
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, attached_node=1,},
@@ -672,6 +677,7 @@ end,
 				type = "fixed",
 				fixed = {-1/3, -1/2, -1/3, 1/3, 1/2, 1/3},
 			},
+			paramtype = "light",
 			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, attached_node=1},
